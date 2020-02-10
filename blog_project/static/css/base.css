@@ -1,5 +1,5 @@
 header h1 a { 
-    color: red;
+    color: rgb(192, 207, 56);
 } 
 
 body { 
@@ -14,7 +14,7 @@ header {
  }
 
 header h1 a {
-    color: red;
+    color: rgb(131, 39, 123);
     text-decoration: none;
 }
 
@@ -34,7 +34,7 @@ header h1 a {
 
 .post-entry h2 a, 
 .post-entry h2 a:visited { 
-    color: blue; 
+    color: rgb(175, 22, 129); 
     text-decoration: none; 
 }
 .post-entry p { 

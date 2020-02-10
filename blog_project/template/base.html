@@ -4,6 +4,8 @@
         <title>Django blog</title> 
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:" rel="stylesheet">
         <link href="{% static 'css/base.css' %}" rel="stylesheet"> 
+        <!-- Latest compiled and minified CSS -->
+        
     </head> 
     <body> 
         <div> 
@@ -16,16 +18,47 @@
                 </div> 
             </header> 
             {% if user.is_authenticated %} 
-                <p>Hi {{ user.username }}!</p>
-                <p><a href="{% url 'logout' %}">Log out</a></p>  
+            <div class=" container ">
+                <div class="row">
+                    <div class="col-md-2 m-auto nav-right">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <p>Hi {{ user.username }}</p>
+                                <p><a href="{% url 'logout' %}">Log out</a></p>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {% else %} 
-                <p>You are not logged in.</p> 
-                <a href="{% url 'login' %}">Log In</a> 
-          
+            <div class=" container ">
+                <div class="row">
+                    <div class="col-md-6 m-auto nav-right">
+                        <div class="card text-center">
+                            <div class="card-body">           
+                                <p> <h4>You are not logged in,Please Login in Django Blog!!!</h4></p> 
+                                <button class= "btn btn-light"><a href="{% url 'login' %}">LogIn</a></button>
+                                <button class= "btn btn-light"><a href="{% url 'accounts:signup'%}">SignUp</a></button>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 
             {% endif %} 
             {% block content %} 
             {% endblock content %} 
         </div>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
     </body> 
 </html>
